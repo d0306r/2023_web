@@ -34,9 +34,9 @@ public class EmployeeServlet extends HttpServlet {
             out.print("  <table>");
             out.print("    <tr>");
             out.print("      <th>사원번호</th>");
-            out.print("      <th>생일</th>");
             out.print("      <th>이름</th>");
             out.print("      <th>성</th>");
+            out.print("      <th>생일</th>");
             out.print("      <th>성별</th>");
             out.print("      <th>고용일</th>");
             out.print("    </tr>");
@@ -57,5 +57,20 @@ public class EmployeeServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String empNo = req.getParameter("emp_no");
+        String birthDate = req.getParameter("brith_date");
+        String firstName = req.getParameter("first_name");
+        String lastName = req.getParameter("last_name");
+        String gender = req.getParameter("gender");
+
+        System.out.println("empNo = " + empNo);
+        System.out.println("birthDate = " + birthDate);
+        System.out.println("firstName = " + firstName);
+        System.out.println("lastName = " + lastName);
+        System.out.println("gender = " + gender);
     }
 }

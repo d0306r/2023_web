@@ -7,7 +7,7 @@
 </head>
 <body>
 </body>
-    <form>
+    <form action="http://localhost:8080/employee" method="post">
         <label for="emp_no">사원 번호</label>
         <input type="text" id="emp_no" name="emp_no"><br>
 
@@ -20,13 +20,13 @@
         <label for="last_name">성</label>
         <input type="text" id="last_name" name="last_name"><br>
 
-        <label for="html">html</label>
-        <input type="radio" id="html" name="web">
+        <label for="female">여성</label>
+        <input type="radio" id="female" name="gender" value="F">
 
-        <label for="css">css</label>
-        <input type="radio" id="css" name="web">
+        <label for="male">남성</label>
+        <input type="radio" id="male" name="gender" value="M"><br>
 
-        <label for="javascript">javascript</label>
-        <input type="radio" id="javascript" name="web">
+        <input type="submit">
+
     </form>
 </html>
