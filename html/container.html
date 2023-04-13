@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Container</title>
+    <style>
+        /* class는 .으로 접근 */
+        .main{
+            color: blue;
+        }
+        /* id는 #으로 접근 */
+        #result{
+            color: coral;
+        }
+        .a{
+            background-color: beige;
+            border: 1px;
+        }
+        .b{
+            background-color: whitesmoke;
+            border: 1px;
+        }
+        .sub{
+            color: darkorange;
+            background-color: white;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="a">
+        <h1> 서론 </h1>
+        <p> 서론 내용입니다. </p>
+    </div>
+    <div class="b">
+        <h1 class="main"> 본론1 </h1>
+        <p> 본론 <span class="sub">내용</span>입니다. </p>
+        <h1 class="main"> 본론2 </h1>
+        <p> 본론 <span class="sub">내용</span>입니다. </p>
+        <h1 class="main"> 본론3 </h1>
+        <p> 본론 <span class="sub">내용</span>입니다. </p>
+    </div>
+    <div class="b">
+        <h1 id="result"> 결론 </h1>
+        <p> 결론 내용입니다. </p>
+    </div>
+</body>
+</html>

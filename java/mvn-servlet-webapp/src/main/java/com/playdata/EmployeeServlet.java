@@ -24,14 +24,35 @@ public class EmployeeServlet extends HttpServlet {
         Connection con = (Connection) req.getServletContext().getAttribute("dbConnection");
         try(Statement stat = con.createStatement();
              ResultSet rs = stat.executeQuery(sql)) {
+            out.print("<!DOCTYPE html>");
+            out.print("<html>");
+            out.print("<head>");
+            out.print("  <meta charset=\"UTF-8\">");
+            out.print("  <title>Employees</title>");
+            out.print("</head>");
+            out.print("<body>");
+            out.print("  <table>");
+            out.print("    <tr>");
+            out.print("      <th>사원번호</th>");
+            out.print("      <th>생일</th>");
+            out.print("      <th>이름</th>");
+            out.print("      <th>성</th>");
+            out.print("      <th>성별</th>");
+            out.print("      <th>고용일</th>");
+            out.print("    </tr>");
             while (rs.next()) {
-                out.print(rs.getInt("emp_no")+ ",");
-                out.print(rs.getString("birth_date")+ ",");
-                out.print(rs.getString("first_name")+ ",");
-                out.print(rs.getString("last_name")+ ",");
-                out.print(rs.getString("gender")+ ",");
-                out.print(rs.getString("hire_date")+ "<br>");
+                out.print("    <tr>");
+                out.print("      <td>" + rs.getInt("emp_no") + "</td>");
+                out.print("      <td>" + rs.getString("first_name") + "</td>");
+                out.print("      <td>" + rs.getString("last_name") + "</td>");
+                out.print("      <td>" + rs.getString("birth_date") + "</td>");
+                out.print("      <td>" + rs.getString("gender") + "</td>");
+                out.print("      <td>" + rs.getString("hire_date") + "</td>");
+                out.print("    <tr>");
             }
+            out.print("</table>");
+            out.print("</body>");
+            out.print("</html>");
 
         } catch (SQLException e) {
             e.printStackTrace();
