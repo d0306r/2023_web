@@ -65,12 +65,26 @@ public class EmployeeServlet extends HttpServlet {
         String birthDate = req.getParameter("brith_date");
         String firstName = req.getParameter("first_name");
         String lastName = req.getParameter("last_name");
+        String hireDate = req.getParameter("hire_date");
         String gender = req.getParameter("gender");
 
         System.out.println("empNo = " + empNo);
         System.out.println("birthDate = " + birthDate);
         System.out.println("firstName = " + firstName);
         System.out.println("lastName = " + lastName);
+        System.out.println("hireDate = " + hireDate);
         System.out.println("gender = " + gender);
+
+        String sql = " INSERT INTO employees(emp_no, brith_date, first_name, last_name, hire_date, gender) values(?,?,?,?,?,?)";
+        Connection con = (Connection) req.getServletContext().getAttribute("dbConnection");
+        try (Statement stat = con.prepareStatement(sql)){
+            stat.setInt(1, Pa);
+
+            int rs = stat.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
+
 }
