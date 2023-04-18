@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4a65e578b6.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
         .my-class{
             background-color: cornflowerblue;
-            font-family: 'Dongle', sans-serif;
         }
         .large{
             font-size: 5vw;
@@ -23,17 +23,35 @@
             text-align: center;
             color: darkgreen;
         }
+        div.font *{
+            font-family: 'Dongle', sans-serif;
+        }
         
 
     </style>
 </head>
 <body>
-    <h1> 클래스 선택자 예시입니다. </h1>
-    <p class="my-class large"> my-class large 클래스가 적용된 문장입니다. </p>
-    <p> 클래스가 적용되지 않은 문장입니다. </p>
-    <p class="my-class center"> my-class center가 적용된 문장2입니다. </p>
+    <div id="navigation">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contents</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="font">
+        <h1> 클래스 선택자 예시입니다. </h1>
+        <p class="my-class large"> my-class large 클래스가 적용된 문장입니다. </p>
+        <p> 클래스가 적용되지 않은 문장입니다. </p>
+        <p class="my-class center"> my-class center가 적용된 문장2입니다. </p>
+    </div>
 
-    <p> 아이디 선택자 </p>
-    <p id="my-id"> my-id라는 id가 적용된 문장입니다. </p>
+    <div>
+        <p> 아이디 선택자 </p>
+        <p id="my-id"> my-id라는 id가 적용된 문장입니다. </p>
+    </div>  
+    <div>
+        <a href="#"> <i class="fa-brands fa-slack"></i> 슬랙에 가입하세요 </a>
+    </div>
 </body>
 </html>
